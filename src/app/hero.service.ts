@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 import { Hero } from './hero';
 // import { HEROES } from './mock-heroes';
@@ -10,8 +11,11 @@ export class HeroService {
   
   private heroesUrl = 'app/heroes';  // URL to web api
   private headers = new Headers({'Content-Type': 'application/json'});
-  
-  constructor(private http: Http) { }
+  items: FirebaseListObservable<any[]>;
+
+  constructor(private http: Http, af: AngularFire) { 
+    this.items = af.database.list('/items');
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
@@ -23,6 +27,12 @@ export class HeroService {
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data as Hero[])
+               .catch(this.handleError);
+  }
+
+  getItems(): Promise<any[]> {
+    return this.items
+               .toPromise()
                .catch(this.handleError);
   }
 
@@ -56,5 +66,6 @@ export class HeroService {
       .then(() => null)
       .catch(this.handleError);
   }
+  
 
 }
