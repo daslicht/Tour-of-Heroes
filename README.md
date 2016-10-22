@@ -2,6 +2,19 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
 
+You can find all possible blueprints in the table below:
+
+Scaffold  | Usage
+---       | ---
+Component | `ng g component my-new-component`
+Directive | `ng g directive my-new-directive`
+Pipe      | `ng g pipe my-new-pipe`
+Service   | `ng g service my-new-service`
+Class     | `ng g class my-new-class`
+Interface | `ng g interface my-new-interface`
+Enum      | `ng g enum my-new-enum`
+Module    | `ng g module my-module`
+
 The code is based on the [Angular 2 TypeScript, Tour-of-Heroes Tutorial]https://angular.io/docs/ts/latest/tutorial/
 
 ## Development server
