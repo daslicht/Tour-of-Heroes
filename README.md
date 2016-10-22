@@ -1,6 +1,8 @@
-# Material
+# Tour-of-Heroes
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.18.
+
+The code is based on the [Angular 2 TypeScript, Tour-of-Heroes Tutorial]https://angular.io/docs/ts/latest/tutorial/
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
