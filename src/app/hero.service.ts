@@ -11,10 +11,9 @@ export class HeroService {
   
   private heroesUrl = 'app/heroes';  // URL to web api
   private headers = new Headers({'Content-Type': 'application/json'});
-  items: FirebaseListObservable<any[]>;
 
-  constructor(private http: Http, af: AngularFire) { 
-    this.items = af.database.list('/items');
+  constructor(private http: Http) { 
+
   }
 
   private handleError(error: any): Promise<any> {
@@ -27,12 +26,6 @@ export class HeroService {
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data as Hero[])
-               .catch(this.handleError);
-  }
-
-  getItems(): Promise<any[]> {
-    return this.items
-               .toPromise()
                .catch(this.handleError);
   }
 

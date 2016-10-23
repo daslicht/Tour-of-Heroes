@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-app',
@@ -9,7 +8,10 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
-  constructor(af: AngularFire) { }
+
+  constructor() { 
+
+  }
 
   ngOnInit() {
   }

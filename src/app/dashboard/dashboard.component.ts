@@ -13,7 +13,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
-  items: any;//FirebaseListObservable<any[]>;
+  items: any;//FirebaseListObservable<any[]>; ????
 
   constructor(
       private router: Router,
@@ -23,8 +23,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1, 5));
-    this.heroService.getItems()
-      .then(items => this.items = items);
   }
 
   gotoDetail(hero: Hero): void {
