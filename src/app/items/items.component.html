@@ -12,7 +12,7 @@ Firebase Items:
 <hr>
 
 <div *ngIf="item">
-  <h2>{{(item | async)?.name}}</h2>
+  <h2>{{item.name}}</h2>
   <h3>Key: {{(item | async)?.$key}}</h3>
   <h3>Value: {{(item | async)?.$value}}</h3>
   <input [(ngModel)]="name" placeholder="name"/>
