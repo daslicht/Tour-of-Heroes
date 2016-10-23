@@ -13,7 +13,7 @@ export class ItemsComponent implements OnInit {
   name:string;
 
   constructor(af: AngularFire) { 
-    this.af=af;
+    this.item = af.database.object('/item');
   }
 
   save() {
@@ -34,7 +34,6 @@ export class ItemsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.item = this.af.database.object('/item');
     console.log('constructor: ',this.item);
   }
 
