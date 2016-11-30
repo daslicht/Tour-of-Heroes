@@ -1,6 +1,13 @@
+<h2>HEROES</h2>
+<ul class="items">
+  <li *ngFor="let hero of heroes |async"
+    [class.selected] = "isSelected(hero)"
+    (click)="onSelect(hero)">
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+</ul>
 
-
-<h2>My Heroes</h2>
+<!--<h2>My Heroes</h2>
 
 <div>
   <label>Hero name:</label> <input #heroName />
@@ -25,4 +32,4 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
     <button class="delete" (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
-</ul>
+</ul>-->

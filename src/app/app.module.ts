@@ -7,36 +7,31 @@ import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api/in-memory-web-api.module';
 import { InMemoryDataService }  from './in-memory-data.service';
 
-import { HeroesComponent } from './hero/heroes.component';
 import { MaterialModule } from '@angular/material';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { AppComponent } from './app/app.component';
-import { HeroService }  from './hero.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AppRoutingComponent } from './app-routing/app-routing.component';
-import { AppRoutingModule }     from './app-routing/app-routing.module';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { AppComponent } from './app.component';
+//import { AppRoutingComponent } from './app-routing/app-routing.component';
+import { AppRoutingModule }     from './app-routing.module';
 
 import './rxjs-extensions';
 
+import { CrisisListComponent } from './crisis-lits.component';
+import { HeroesModule } from './heroes/heroes.module';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    DashboardComponent,
-    AppRoutingComponent,
-    HeroSearchComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     MaterialModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HeroesModule
   ],
-  providers: [HeroService],
+  declarations: [
+    AppComponent,
+    CrisisListComponent
+  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
